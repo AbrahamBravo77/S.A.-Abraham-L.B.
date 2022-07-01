@@ -1,0 +1,66 @@
+package CapLobaco;
+
+/*programa que pida por consola si quieres pasar de kg a libras o de libras a kilos
+y luego te pida la cantidad y te devuelva el resultado.
+*/
+
+import java.util.Scanner; //importamos el paquete Scanner
+
+
+public class ConversorKgLibra {
+
+	public static void main(String[] args) {
+	
+		/*Declaramos las variables e indicamos que vamos a trabajar con Scanner es decir, 
+		 introduciendo datos por parte del usuario.
+		 */
+		
+		int opcion;
+		double Kg = 0;
+		double Libras = 0 ;
+		
+		Scanner sc = new Scanner(System.in);
+		
+		do {
+		
+           System.out.println("Buenos días, elige una opción: ");
+           System.out.println("1. Pasar de Kg a Libras. ");
+           System.out.println("2. Pasar de Libras a Kg. ");
+           System.out.println("3. Salir. ");
+           System.out.println("Introduce un numero:");
+
+        opcion = sc.nextInt();
+        
+
+       }while (opcion > 3 || opcion < 1);
+		
+		//Con el switch, lo que hacemos es pasarle a nuestro programa la opción seleccionada
+
+         switch(opcion){
+         
+            case 1:  //si el usuario introduce 1.
+             System.out.println("Has elegido, pasar de Kg a Libras. Ingresa la cantidad de Kg a convertir: " +Kg);
+             
+             Kg = sc.nextDouble();
+             Libras = Kg * 2.2;
+             System.out.println( +Kg+  " Kg equivalen a " +Libras+ " libras");
+             
+             
+            break;
+   
+            case 2:  //si el usuario introduce 2.
+	         System.out.println("Has elegido, pasar de Libras a Kg. Ingresa la cantidad de Libras a convertir: " +Libras);
+	         
+	        Libras = sc.nextDouble();
+	        Kg = Libras / 2.2;
+	        System.out.println( +Libras+ " Libras equivalen a " +Kg+ " Kg");
+	        break;
+	   
+            case 3:   //si el usuario introduce 3.
+             System.out.println("Decidiste salir del programa. Muchas Gracias, hasta otra.");
+            break;
+   
+    
+     }
+   }
+ }
